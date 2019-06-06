@@ -1,0 +1,15 @@
+.header {
+    background-color: black;
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,20 @@
+.navbar li {
+    display: inline-block;
+    text-align: center;
+}
+
+.itemLeft {
+    width: 50%;
+}
+
+.itemCenter {
+    width: 25%;
+}
+
+.itemRight {
+    width: 25%;
+}
+
+li {
+    color: white;
+}
