@@ -1,20 +1,12 @@
-.navbar li {
-    display: inline-block;
-    text-align: center;
+.navbar {
+    background-color: black;
 }
 
-.itemLeft {
-    width: 50%;
-}
+.navbar > .navbar-nav > .nav-item {
+    color: silver;
+} 
 
-.itemCenter {
-    width: 25%;
-}
-
-.itemRight {
-    width: 25%;
-}
-
-li {
-    color: white;
+#bigTitle {
+    color: lightcoral;
+    font-weight: bold;
 }

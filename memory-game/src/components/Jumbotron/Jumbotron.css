@@ -1,15 +1,14 @@
-.header {
-    background-color: black;
-    position: relative;
-    width: 100%;
+.jumbotron {
+    margin-top: 1rem;
+    background-color: lightcoral;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 h1 {
-    text-align: center;
-    color: white;
+    font-weight: bold;
+    color: black;
 }
 
-h2 {
-    text-align: center;
-    color: white;
+h3 {
+    color: whitesmoke;
 }

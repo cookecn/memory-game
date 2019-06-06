@@ -1,10 +1,10 @@
 import React from 'react';
-import 'Card.css';
+import './Card.css';
 
 const Card = props => (
-    <div className="card" onClick={props.imageClick}>
-        <div className="img-container">
-            <img alt={props.image.replace(".jpg", "")} src={requestAnimationFrame("../../images/" + props.iamge)} />
+    <div className="card bg-dark" onClick={props.imageClick}>
+        <div className="card-img img-fluid">
+            <img alt={props.image.replace(".jpg", "")} src={require("../../images/" + props.image)} />
         </div>
     </div>
 );
