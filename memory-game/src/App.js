@@ -1,11 +1,11 @@
 //Import all components here:
-import React, { Component } from 'react';
-import Navbar from './components/Navbar';
-import Jumbotron from './components/Jumbotron';
-import Card from './components/Cards';
-import Footer from './components/Footer';
-import monument from './monument.json'
-import './App.css';
+import React, { Component } from "react";
+import Navbar from "./components/Navbar";
+import Jumbotron from "./components/Jumbotron";
+import Card from "./components/Cards";
+import Footer from "./components/Footer";
+import monument from "./monument.json";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -15,15 +15,16 @@ class App extends Component {
     highScore: 0
   };
 
-  //on monumentImage click, remove that game from the array
+  //on monumentImage click, remove that monument from the array
   imageClick = event => {
     const currentMonumentPhoto = event.target.alt;
-    const MonumentClicked = this.state.clickedMonument.indexOf(currentMonumentPhoto) > -1;
+    const MonumentClicked =
+      this.state.clickedMonument.indexOf(currentMonumentPhoto) > -1;
 
     //on click that has already been clicked before
     if (MonumentClicked) {
       this.setState({
-        monument: this.state.monument.sort(function (a, b) {
+        monument: this.state.monument.sort(function(a, b) {
           return 0.5 - Math.random();
         }),
         clickedMonument: [],
@@ -34,23 +35,23 @@ class App extends Component {
       alert("You lose! Please try again");
 
       //on monumentImages that are still available, increase score by 1, and re-order the cards randomly
-
     } else {
-      this.setState({
-        monument: this.state.monument.sort(function (a, b) {
-          return 0.5 - Math.random();
-        }),
-        clickedMonument: this.state.clickedMonument.concat(
-          currentMonumentPhoto
-        ),
-        score: this.state.score + 1
-      },
+      this.setState(
+        {
+          monument: this.state.monument.sort(function(a, b) {
+            return 0.5 - Math.random();
+          }),
+          clickedMonument: this.state.clickedMonument.concat(
+            currentMonumentPhoto
+          ),
+          score: this.state.score + 1
+        },
         //once all monumentImage's are selected, game will end and alert player that they won, and game will restart at 0.
         () => {
           if (this.state.score === 18) {
             alert("You won!");
             this.setState({
-              monument: this.state.monument.sort(function (a, b) {
+              monument: this.state.monument.sort(function(a, b) {
                 return 0.5 - Math.random();
               }),
               clickedMonument: [],
@@ -59,11 +60,12 @@ class App extends Component {
               highScore: this.state.highScore
             });
           }
-        })
+        }
+      );
     }
-
-  }
+  };
   //render the page
+  //need to fix the highScore section
   render() {
     return (
       <div>
@@ -71,7 +73,12 @@ class App extends Component {
         <Jumbotron />
         <div className="wrapper">
           {this.state.monument.map(monument => (
-            <Card imageClick={this.imageClick} id={monument.id} key={monument.id} image={monument.image} />
+            <Card
+              imageClick={this.imageClick}
+              id={monument.id}
+              key={monument.id}
+              image={monument.image}
+            />
           ))}
         </div>
         <Footer />
@@ -81,3 +88,5 @@ class App extends Component {
 }
 
 export default App;
+
+// Future code additions would include the manipulation of the highScore state, as I couldn't get to that this week.
